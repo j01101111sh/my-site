@@ -1,5 +1,5 @@
 """
-Custom error handlers for the [PROJECT NAME] application.
+Custom error handlers for the my-site application.
 """
 
 import logging

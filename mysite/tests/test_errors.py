@@ -1,6 +1,6 @@
 from django.test import RequestFactory, TestCase, override_settings
 
-from projname.views import errors
+from mysite.views import errors
 
 
 class ErrorPageTests(TestCase):

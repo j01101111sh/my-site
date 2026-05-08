@@ -1,11 +1,11 @@
 from django.apps import AppConfig
 
 
-class ProjNameConfig(AppConfig):
-    name = "projname"
+class MysiteConfig(AppConfig):
+    name = "mysite"
 
     def ready(self) -> None:
         """
         Import signals when the app is ready.
         """
-        import projname.signals  # noqa: F401
+        import mysite.signals  # noqa: F401
