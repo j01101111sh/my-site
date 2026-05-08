@@ -1,6 +1,12 @@
+import logging
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.test.client import Client
 from django.urls import reverse
+
+# Initialize logging for the test suite
+logger: logging.Logger = logging.getLogger(__name__)
 
 User = get_user_model()
 
@@ -41,3 +47,38 @@ class FrontendTests(TestCase):
 
         # Check for the button ID
         self.assertIn('id="theme-toggle"', content)
+
+
+class FaviconTests(TestCase):
+    """
+    Test suite for verifying frontend assets and visual identity markers.
+    """
+
+    def setUp(self) -> None:
+        """
+        Set up the test client before each test.
+        """
+        self.client: Client = Client()
+
+    def test_homepage_contains_favicon(self) -> None:
+        """
+        Verifies that the root splash page renders successfully and
+        includes the correct SVG favicon link tag representing the data analyst identity.
+        """
+        logger.info("Executing test_homepage_contains_favicon...")
+
+        # Resolve the URL for the root splash page
+        url: str = reverse("splash")
+        response = self.client.get(url)
+
+        # Ensure the page loads without server errors (HTTP 200)
+        self.assertEqual(response.status_code, 200)
+
+        # Check that the specific static asset is referenced in the HTML payload
+        expected_favicon_reference: str = "images/favicon.svg"
+        self.assertContains(
+            response,
+            expected_favicon_reference,
+            msg_prefix="The SVG favicon reference is missing from the base template.",
+        )
+        logger.info("Data analyst favicon correctly found in the homepage response.")
