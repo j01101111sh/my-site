@@ -1,0 +1,4 @@
+from .post_detail import PostDetailView
+from .post_list import PostListView
+
+__all__ = ["PostDetailView", "PostListView"]
