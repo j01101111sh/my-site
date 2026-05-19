@@ -28,7 +28,7 @@ dev = [
     "pytest-django>=4.11.1",
     "pytest-xdist>=3.8.0",
     "ruff>=0.15.11",
-    "types-markdown>=3.10.2.20260408",
+    "types-markdown>=3.10.2.20260518",
 ]
 prod = [
     "gunicorn>=25.3.0",
