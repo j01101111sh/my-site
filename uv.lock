@@ -420,6 +420,73 @@ wheels = [
 ]
 
 [[package]]
+name = "mysite"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "crispy-bootstrap5" },
+    { name = "dj-database-url" },
+    { name = "django" },
+    { name = "django-crispy-forms" },
+    { name = "markdown" },
+    { name = "nh3" },
+    { name = "python-dotenv" },
+    { name = "whitenoise" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "bandit" },
+    { name = "diff-cover" },
+    { name = "django-coverage-plugin" },
+    { name = "django-stubs", extra = ["compatible-mypy"] },
+    { name = "mypy" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-django" },
+    { name = "pytest-xdist" },
+    { name = "ruff" },
+    { name = "types-markdown" },
+]
+prod = [
+    { name = "gunicorn" },
+    { name = "psycopg", extra = ["binary"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "crispy-bootstrap5", specifier = ">=2026.3" },
+    { name = "dj-database-url", specifier = ">=3.1.0" },
+    { name = "django", specifier = ">=6.0.4" },
+    { name = "django-crispy-forms", specifier = ">=2.6" },
+    { name = "markdown", specifier = ">=3.10.1" },
+    { name = "nh3", specifier = ">=0.3.4" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
+    { name = "whitenoise", specifier = ">=6.12.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "bandit", specifier = ">=1.9.3" },
+    { name = "diff-cover", specifier = ">=10.2.0" },
+    { name = "django-coverage-plugin", specifier = ">=3.2.2" },
+    { name = "django-stubs", extras = ["compatible-mypy"], specifier = ">=6.0.3" },
+    { name = "mypy", specifier = ">=1.20.2" },
+    { name = "pre-commit", specifier = ">=4.5.1" },
+    { name = "pytest", specifier = ">=9.0.3" },
+    { name = "pytest-cov", specifier = ">=7.1.0" },
+    { name = "pytest-django", specifier = ">=4.11.1" },
+    { name = "pytest-xdist", specifier = ">=3.8.0" },
+    { name = "ruff", specifier = ">=0.15.11" },
+    { name = "types-markdown", specifier = ">=3.10.2.20260518" },
+]
+prod = [
+    { name = "gunicorn", specifier = ">=25.3.0" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3.3.4" },
+]
+
+[[package]]
 name = "nh3"
 version = "0.3.5"
 source = { registry = "https://pypi.org/simple" }
@@ -512,73 +579,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/8e/22/2de9408ac81acbb8a7d05d4cc064a152ccf33b3d480ebe0cd292153db239/pre_commit-4.6.0.tar.gz", hash = "sha256:718d2208cef53fdc38206e40524a6d4d9576d103eb16f0fec11c875e7716e9d9", size = 198525, upload-time = "2026-04-21T20:31:41.613Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/80/6e/4b28b62ecb6aae56769c34a8ff1d661473ec1e9519e2d5f8b2c150086b26/pre_commit-4.6.0-py2.py3-none-any.whl", hash = "sha256:e2cf246f7299edcabcf15f9b0571fdce06058527f0a06535068a86d38089f29b", size = 226472, upload-time = "2026-04-21T20:31:40.092Z" },
-]
-
-[[package]]
-name = "mysite"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "crispy-bootstrap5" },
-    { name = "dj-database-url" },
-    { name = "django" },
-    { name = "django-crispy-forms" },
-    { name = "markdown" },
-    { name = "nh3" },
-    { name = "python-dotenv" },
-    { name = "whitenoise" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "bandit" },
-    { name = "diff-cover" },
-    { name = "django-coverage-plugin" },
-    { name = "django-stubs", extra = ["compatible-mypy"] },
-    { name = "mypy" },
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-django" },
-    { name = "pytest-xdist" },
-    { name = "ruff" },
-    { name = "types-markdown" },
-]
-prod = [
-    { name = "gunicorn" },
-    { name = "psycopg", extra = ["binary"] },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "crispy-bootstrap5", specifier = ">=2026.3" },
-    { name = "dj-database-url", specifier = ">=3.1.0" },
-    { name = "django", specifier = ">=6.0.4" },
-    { name = "django-crispy-forms", specifier = ">=2.6" },
-    { name = "markdown", specifier = ">=3.10.1" },
-    { name = "nh3", specifier = ">=0.3.4" },
-    { name = "python-dotenv", specifier = ">=1.2.2" },
-    { name = "whitenoise", specifier = ">=6.12.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "bandit", specifier = ">=1.9.3" },
-    { name = "diff-cover", specifier = ">=10.2.0" },
-    { name = "django-coverage-plugin", specifier = ">=3.2.2" },
-    { name = "django-stubs", extras = ["compatible-mypy"], specifier = ">=6.0.3" },
-    { name = "mypy", specifier = ">=1.20.2" },
-    { name = "pre-commit", specifier = ">=4.5.1" },
-    { name = "pytest", specifier = ">=9.0.3" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-django", specifier = ">=4.11.1" },
-    { name = "pytest-xdist", specifier = ">=3.8.0" },
-    { name = "ruff", specifier = ">=0.15.11" },
-    { name = "types-markdown", specifier = ">=3.10.2.20260408" },
-]
-prod = [
-    { name = "gunicorn", specifier = ">=25.3.0" },
-    { name = "psycopg", extras = ["binary"], specifier = ">=3.3.4" },
 ]
 
 [[package]]
@@ -786,11 +786,11 @@ wheels = [
 
 [[package]]
 name = "types-markdown"
-version = "3.10.2.20260508"
+version = "3.10.2.20260518"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/24/62/4ca11db82799590117d9b6ef8fcd6515039cff80838304face5440f7d95c/types_markdown-3.10.2.20260508.tar.gz", hash = "sha256:64c405a30decd46cf78443bbcde8331f561f83752cc6d962ff3f5ccaabe26a8e", size = 19818, upload-time = "2026-05-08T04:49:45.095Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/82/c605b9c9cfa244922449af20b93f8c4ecdc936b926d3340830036e0f87f1/types_markdown-3.10.2.20260518.tar.gz", hash = "sha256:206b044dd55a02ed66dfb9cfc02b1e500005d60370834cee5b41d26a3d8f0f72", size = 19865, upload-time = "2026-05-18T06:01:32.268Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/9d/eae7125bcf063ff5f79aadad58f3d37675263941f84e025bf53de1735fe1/types_markdown-3.10.2.20260508-py3-none-any.whl", hash = "sha256:2ee5e462c7b821c27c3d8f75f4da873d3e3c87d24d7f2d741f8f4261e4024a99", size = 25811, upload-time = "2026-05-08T04:49:43.962Z" },
+    { url = "https://files.pythonhosted.org/packages/bf/db/fa5eef03f646f507d078a382ff8b239871ea847460f79effcfc44977865d/types_markdown-3.10.2.20260518-py3-none-any.whl", hash = "sha256:146fa9997a7d3aa3de1e3a51c56f3875d3947b7c545e58691e79f65fb56a663f", size = 25821, upload-time = "2026-05-18T06:01:31.35Z" },
 ]
 
 [[package]]
