@@ -49,7 +49,7 @@ repos:
       - id: python-no-log-warn # check for the deprecated .warn() method of python loggers
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.48.0
+    rev: v0.49.0
     hooks:
       - id: markdownlint-fix
         args: ["--disable", "MD033"]
